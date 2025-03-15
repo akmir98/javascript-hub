@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn JavaScript with anime-inspired characters and interactive lessons">
+    <meta name="theme-color" content="#6b5b95">
+    <title>JavaScript Learning Hub - Anime Edition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="main-nav" role="navigation">
+        <div class="nav-brand">
+            <img src="imge/man-7628305_1280.jpg" alt="JS Ninja" class="nav-logo" loading="lazy">
+            <span>JS Learning Hub</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#characters">Characters</a></li>
+            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#practice">Practice</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <header id="home" class="hero">
+            <div class="hero-content">
+                <h1>Begin Your JavaScript Journey</h1>
+                <p>Learn JavaScript with anime-inspired characters and interactive lessons</p>
+                <a href="#curriculum" class="start-learning-btn">Let's Start Learning</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://i.imgur.com/WvXwkHE.png" alt="Hero Character" loading="lazy">
+            </div>
+        </header>
+
+        <!-- Character Section -->
+        <section id="characters" class="characters">
+            <h2 class="section-title">Meet Your Mentors</h2>
+            <div class="character-grid"></div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section id="curriculum" class="curriculum">
+            <h2 class="section-title">Learning Path</h2>
+            <div class="timeline">
+                <!-- Week blocks will be added dynamically -->
+            </div>
+        </section>
+
+        <!-- Interactive Practice Section -->
+        <section id="practice" class="practice">
+            <h2 class="section-title">Practice Arena</h2>
+            <div class="practice-grid">
+                <div class="code-editor">
+                    <h3>Code Editor</h3>
+                    <div class="editor-window">
+                        <div class="editor-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <textarea id="code-input" placeholder="Write your JavaScript code here..." aria-label="JavaScript code editor"></textarea>
+                    </div>
+                    <button class="run-button">Run Code</button>
+                </div>
+                <div class="output-window">
+                    <h3>Output</h3>
+                    <div id="code-output" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="resources">
+            <h2 class="section-title">Learning Resources</h2>
+            <div class="resource-grid">
+                <!-- Resource cards will be added dynamically -->
+            </div>
+        </section>
+
+        <!-- Progress Dashboard -->
+        <section class="dashboard">
+            <h2 class="section-title">Your Progress</h2>
+            <div class="progress-grid">
+                <div class="progress-card">
+                    <h3>Completed Lessons</h3>
+                    <div class="progress-circle" data-progress="0">
+                        <span class="progress-number" aria-live="polite">0%</span>
+                    </div>
+                </div>
+                <div class="progress-card">
+                    <h3>Practice Problems</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" data-progress="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+                    </div>
+                </div>
+                <div class="progress-card">
+                    <h3>Achievement Points</h3>
+                    <div class="points" aria-live="polite">0</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2 class="section-title">Your Projects</h2>
+            <div class="projects-container">
+                <div class="projects-header">
+                    <button id="create-project-btn" class="create-project-btn">
+                        <i class="fas fa-plus"></i> Create New Project
+                    </button>
+                    <div class="project-filter">
+                        <label for="project-filter">Filter:</label>
+                        <select id="project-filter">
+                            <option value="all">All Projects</option>
+                            <option value="recent">Recently Updated</option>
+                            <option value="completed">Completed</option>
+                            <option value="in-progress">In Progress</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project cards will be dynamically inserted here -->
+                </div>
+                
+                <!-- Project Creation Modal -->
+                <div id="project-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times;</span>
+                        <h3 id="modal-title">Create New Project</h3>
+                        <form id="project-form">
+                            <div class="form-group">
+                                <label for="project-name">Project Name:</label>
+                                <input type="text" id="project-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="project-description">Description:</label>
+                                <textarea id="project-description" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="project-type">Project Type:</label>
+                                <select id="project-type">
+                                    <option value="web">Web Application</option>
+                                    <option value="game">Game</option>
+                                    <option value="tool">Tool/Utility</option>
+                                    <option value="api">API Integration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" id="cancel-project">Cancel</button>
+                                <button type="submit" id="save-project">Save Project</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Project Details Modal -->
+                <div id="project-details-modal" class="modal">
+                    <div class="modal-content project-details-content">
+                        <span class="close-details-modal">&times;</span>
+                        <div id="project-details-container">
+                            <!-- Project details will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Methods Section -->
+        <section class="important-methods">
+            <h2 class="section-title">JavaScript Methods</h2>
+            <div class="methods-grid">
+                <!-- Method cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#characters">Characters</a></li>
+                    <li><a href="#curriculum">Curriculum</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" aria-label="Email for newsletter">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 JavaScript Learning Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/characters.js"></script>
+    <script src="js/curriculum.js"></script>
+    <script src="js/practice.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/methods.js"></script>
+    <script src="js/projects.js"></script>
+</body>
+</html> 

@@ -1,0 +1,299 @@
+/* Tablet Styles (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .hero {
+        padding: 5rem 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Timeline Adjustments */
+    .timeline::before {
+        left: 2rem;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 4rem;
+    }
+
+    .timeline-item.right {
+        margin-left: 0;
+    }
+
+    /* Resource Grid */
+    .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Methods Grid */
+    .methods-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Timeline Header */
+    .timeline-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .timeline-character {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Mobile Styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 8rem 5% 3rem;
+    }
+
+    .hero-content {
+        margin-bottom: 3rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-image {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    /* Sections Padding */
+    .characters,
+    .curriculum,
+    .practice,
+    .resources,
+    .dashboard {
+        padding: 3rem 5%;
+    }
+
+    /* Grid Layouts */
+    .character-grid,
+    .resource-grid,
+    .progress-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    /* Timeline Mobile */
+    .timeline-content {
+        padding: 1.5rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Resource Cards */
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Schedule Cards */
+    .schedule-card {
+        padding: 1.5rem;
+    }
+
+    /* Methods Grid */
+    .methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Timeline Mobile */
+    .timeline-header {
+        padding-bottom: 1rem;
+    }
+
+    .timeline-character {
+        width: 60px;
+        height: 60px;
+    }
+
+    .character-name {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Mobile Styles (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .progress-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .code-editor {
+        min-height: 200px;
+    }
+
+    #code-input {
+        min-height: 200px;
+    }
+
+    /* Timeline Small Mobile */
+    .timeline::before {
+        left: 1rem;
+    }
+
+    .timeline-item {
+        padding-left: 2.5rem;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    /* Schedule Cards */
+    .schedule-card {
+        padding: 1rem;
+    }
+
+    .schedule-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Methods Cards */
+    .methods-card {
+        padding: 1.5rem;
+    }
+
+    .methods-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .methods-card li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Height-based Media Queries */
+@media screen and (max-height: 700px) {
+    .hero {
+        min-height: auto;
+        padding-top: 6rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-nav,
+    .hero,
+    .practice,
+    .footer {
+        display: none;
+    }
+
+    .curriculum,
+    .resources {
+        page-break-inside: avoid;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1a1a;
+        --text-color: #f0f0f0;
+        --white: #2d2d2d;
+    }
+
+    .code-editor {
+        background: #000;
+    }
+
+    .output-window {
+        background: #2d2d2d;
+        color: #f0f0f0;
+    }
+
+    .progress-card {
+        background: #2d2d2d;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000000;
+        --secondary-color: #ffffff;
+        --text-color: #000000;
+        --background-color: #ffffff;
+    }
+
+    * {
+        border: 1px solid #000000;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .hero-image {
+        animation: none;
+    }
+} 
